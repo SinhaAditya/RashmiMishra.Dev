@@ -1,0 +1,45 @@
+:root {
+    --bg-color: #0D1117;       /* Dark IDE Background */
+    --text-main: #E6EDF3;      /* Primary Text */
+
+    --font-heading: 'Khula', sans-serif;
+    --font-body: 'Faustina', serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var( --text-main);
+    font-family: var(--font-heading);
+    min-height: 100vh;
+    display: flex;          /* Flexbox ऑन करेगा */
+    justify-content: center;/* Horizontal Center (बाएं-दाएं से बीच में) */
+    align-items: center;    /* Vertical Center (ऊपर-नीचे से बीच में) */
+}
+
+
+/* इसके बिना एक निमिष के लिए फ़ॉन्ट साइज़ अलग रेंडर होता है, जब तक गूगल से फ़ॉन्ट डाउनलोड होती है */
+h1 {
+  font-size: 72px; 
+  font-weight: 400; 
+  margin: 0;
+}
+
+
+.काम-जारी::before,
+.काम-जारी::after {
+  content: "";            
+  display: inline-block;
+  width: 1.2em;
+  animation: बिंदु 1.5s infinite; /* बिंदु naam ka animation, 1.5s mein, infinite chalega */
+}
+
+.काम-जारी::before {
+  text-align: right;
+}
+
+@keyframes बिंदु {
+  0%   { content: ""; }   
+  33%  { content: "."; }  
+  66%  { content: ".."; } 
+  100% { content: "..."; }
+}
